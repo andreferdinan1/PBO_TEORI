@@ -1,6 +1,8 @@
 ARRAY
     Array adalah sebuah struktur data pada bahasa pemrograman Java yang digunakan untuk menyimpan kumpulan nilai atau objek dengan tipe data yang sama. Array terdiri dari beberapa elemen yang diakses menggunakan sebuah indeks yang dimulai dari 0.
-Pendeklarasian array
+
+
+PENDEKLARASIKAN ARRAY
     Array harus dideklarasikan seperti layaknya sebuah variabel. Apabila Anda mendeklarasikan array, Anda harus membuat sebuah list dari tipe data, yang diikuti oleh tanda kurung buka dan kurung tutup, yang diikuti oleh nama identifier. Sebagai contoh, 
     int ages[];  
 
@@ -15,9 +17,11 @@ Pendeklarasian array
     //deklarasi dan instantiate 
     obyek 
     int ages[] = new 
-    int[100];    
+    int[100];  
 
-Pengaksesan Array
+
+
+PENGAKSESAN ARRAY
     Untuk mengakses sebuah elemen dalam array, atau mengakses sebagian dari array, Anda harus menggunakan sebuah nomor atau yang disebut sebagai index atau subscript. 
     Sebuah nomor index atau subscript telah diberikan kepada tiap anggota array, sehingga program dan programmer dapat mengakses setiap value apabila dibutuhkan. 
     Index selalu dalam integer. Dimulai dari nol, kemudian akan terus bertambah sampai list value dari array tersebut berakhir. Perlu dicatat, bahwa elemen-elemen didalam array dimulai dari 0 sampai dengan (ukuranArray-1). 
@@ -26,13 +30,17 @@ Pengaksesan Array
     //memberikan nilai 10 kepada elemen pertama array 
     ages[0] = 10; 
     //mencetak elemen array yang terakhir 
-    System.out.print(ages[99]); 
+    System.out.print(ages[99]);
 
-Panjang Array
+
+
+PANJANG ARRAY
     Untuk mengetahui berapa banyak element didalam sebuah array, Anda dapat menggunakan length (panjang) field dalam array. Panjang field dalam array akan mengembalikan ukuran dari array itu sendiri. Sebagai contoh, 
         arrayName.length
 
-Array Multidimensi
+
+
+ARRAY MULTIDIMENSI
     Array multidimensi adalah struktur data pada bahasa pemrograman Java yang dapat menampung nilai atau objek dalam bentuk tabel atau matriks dengan dua atau lebih dimensi. Setiap elemen pada array multidimensi diidentifikasi oleh sebuah set indeks yang terdiri dari bilangan bulat non-negatif yang merepresentasikan posisi elemen pada setiap dimensi.
 
     Contoh sederhana array multidimensi adalah sebagai berikut:
@@ -42,9 +50,11 @@ Array Multidimensi
     {4, 5, 6},
     {7, 8, 9}
         };
-    Dalam contoh di atas, matriks adalah sebuah array multidimensi yang terdiri dari 3 baris dan 3 kolom. Untuk mengakses nilai dari elemen di posisi tertentu pada array multidimensi, kita dapat menggunakan dua atau lebih indeks. Misalnya, untuk mengakses elemen pada baris kedua dan kolom ketiga dari matriks, kita dapat menggunakan sintaks matriks[1][2], yang akan menghasilkan nilai 6.   
+    Dalam contoh di atas, matriks adalah sebuah array multidimensi yang terdiri dari 3 baris dan 3 kolom. Untuk mengakses nilai dari elemen di posisi tertentu pada array multidimensi, kita dapat menggunakan dua atau lebih indeks. Misalnya, untuk mengakses elemen pada baris kedua dan kolom ketiga dari matriks, kita dapat menggunakan sintaks matriks[1][2], yang akan menghasilkan nilai 6. 
 
-Penjelasan sintaks Latihan2
+
+
+PENJELASAN SINTAKS LATIHAN2
     import java.io.BufferedReader;: Baris ini mendefinisikan sebuah package yang digunakan untuk mengimpor kelas BufferedReader ke dalam program. BufferedReader digunakan untuk membaca input yang diberikan oleh pengguna melalui konsol.
 
     import java.io.IOException;: Baris ini mengimpor package java.io.IOException, yang digunakan untuk menangani exception yang dapat terjadi pada saat membaca input dari pengguna.
@@ -71,7 +81,9 @@ Penjelasan sintaks Latihan2
 
     JOptionPane.showMessageDialog(null, "Input terbesar yang diberikan adalah: " + max);: Baris ini menampilkan dialog box menggunakan JOptionPane yang berisi nilai terbesar yang diberikan oleh pengguna.
 
-Penjelasan sintaks Latihan3
+    
+
+PENJELASAN SINTAKS LATIHAN3
     Baris pertama mendefinisikan sebuah array dua dimensi dengan nama entry. Array ini memiliki tiga baris dan tiga kolom, dan menyimpan informasi tentang nama, nomor telepon, dan alamat dari tiga orang yang terdaftar dalam buku alamat.
 
     Loop for digunakan untuk mengakses setiap baris dari array entry. Loop dijalankan sebanyak tiga kali, karena array entry memiliki tiga baris.
