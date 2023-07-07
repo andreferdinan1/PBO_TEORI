@@ -1,92 +1,53 @@
-PENJELASAN TENTANG LATIHAN Studentrecord
+Berikut adalah kode lengkap yang dimodifikasi dan hasil output yang sesuai dengan yang diinginkan:
 
-public class BukuAlamat {
-Deklarasi kelas BukuAlamat yang merupakan kelas publik.
-
-
-    private String nama;
-    private String alamat;
-    private String nohp;
-    private String email;
-    private static int studentCount;
-Deklarasi variabel-variabel instance nama, alamat, nohp, dan email yang memiliki tipe data String. Variabel studentCount dideklarasikan sebagai variabel statik yang akan digunakan untuk menghitung jumlah mahasiswa dalam program.
-
-
-    public BukuAlamat(){
-        studentCount++;
+public class TestExceptions {
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; true; i++) {
+                System.out.println("args[" + i + "]=" + args[i]);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception caught:");
+            System.out.println(e);
+            System.out.println("Quitting...");
+        }
     }
-Konstruktor tanpa parameter yang akan dieksekusi ketika objek BukuAlamat dibuat. Setiap kali konstruktor ini dipanggil, studentCount akan bertambah satu.
+}
+Output yang dihasilkan setelah menjalankan program dengan perintah javac TestExceptions one two three adalah sebagai berikut:
+
+args[0]=one
+args[1]=two
+args[2]=three
+Exception caught:
+java.lang.ArrayIndexOutOfBoundsException: 3
+Quitting...
+Pesan "args[0]=one", "args[1]=two", dan "args[2]=three" menunjukkan nilai dari elemen array args sesuai dengan argumen yang diberikan saat menjalankan program.
+
+Kemudian, program mencapai pengecualian ArrayIndexOutOfBoundsException karena mencoba mengakses elemen ke-3 yang tidak ada dalam array args. Penangkapan pengecualian terjadi, dan pesan "Exception caught:" diikuti oleh informasi pengecualian dan pesan "Quitting..." dicetak sebagai output program.
 
 
-    public BukuAlamat(String temp){ 
-        this.nama = temp; 
-        studentCount++;
-    } 
-Konstruktor dengan satu parameter temp yang digunakan untuk menginisialisasi variabel nama. Setelah variabel nama diinisialisasi, studentCount akan bertambah satu.
 
+Latihan 2
 
-    public BukuAlamat(String nama, String alamat, String nohp, String email){ 
-        this.nama = nama; 
-        this.alamat = alamat;
-        this.nohp = nohp; 
-        this.email = email;
-        studentCount++;
+menangani pengecualian adalah praktik yang baik dalam pengembangan perangkat lunak. Untuk mengatasi pengecualian dalam program TestExceptions, kita dapat menambahkan blok try-catch untuk menangkap dan menangani pengecualian yang mungkin terjadi. Berikut adalah kode yang diperbarui:
+
+public class TestExceptions {
+    public static void main(String[] args) {
+        try {
+            for (int i = 0; true; i++) {
+                System.out.println("args[" + i + "]=" + args[i]);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception caught:");
+            System.out.println(e);
+            System.out.println("Quitting...");
+        } finally {
+            System.out.println("Program execution completed.");
+        }
     }
-Konstruktor dengan empat parameter nama, alamat, nohp, dan email yang digunakan untuk menginisialisasi semua variabel instance. Setelah variabel-instance diinisialisasi, studentCount akan bertambah satu.
+}
+Dalam kode di atas, saya menambahkan blok try-catch untuk menangani pengecualian ArrayIndexOutOfBoundsException. Jika pengecualian terjadi saat mencoba mengakses elemen yang tidak ada dalam array args, blok catch akan dieksekusi dan pesan pengecualian akan dicetak.
 
+Selain itu, kita juga menambahkan blok finally yang akan dieksekusi terlepas dari apakah pengecualian terjadi atau tidak. Dalam blok finally, kita mencetak pesan "Program execution completed." untuk menandakan bahwa eksekusi program telah selesai.
 
-    public String getNama(){
-        return nama;
-    }
-
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-Metode getNama digunakan untuk mengembalikan nilai variabel nama. Metode setNama digunakan untuk mengubah nilai variabel nama.
-
-
-    public String getAlamat(){
-        return alamat;
-    }
-
-    public void setAlamat(String alamat){
-        this.alamat = alamat;
-    }
-Metode getAlamat digunakan untuk mengembalikan nilai variabel alamat. Metode setAlamat digunakan untuk mengubah nilai variabel alamat.
-
-
-    public String getNohp(){
-        return nohp;
-    }
-
-    public void setNohp(String nohp){
-        this.nohp = nohp;
-    }
-Metode getNohp digunakan untuk mengembalikan nilai variabel nohp. Metode setNohp digunakan untuk mengubah nilai variabel nohp.
-
-
-    public String getEmail(){
-        return email;
-    }
-
-    public void setEmail(String email){
-        this.email = email;
-    }
-Metode getEmail digunakan untuk mengembalikan nilai variabel email. Metode setEmail digunakan untuk mengubah nilai variabel email.
-
-    public static int getStudentCount(){
-        return studentCount;
-    }
-Metode statik getStudentCount digunakan untuk mengembalikan nilai variabel studentCount.
-
-    public void print(String temp){ 
-        System.out.println("Nama:" + nama); 
-        System.out.println("Alamat:" + al
-
-PENJEALSAN TENTANG LATIHAN 2 MODUL 10
-
-Kode import java.io.BufferedReader; dan import java.io.InputStreamReader; digunakan untuk mengimpor kelas-kelas yang terdapat dalam pustaka Java yang diperlukan untuk membaca input dari pengguna melalui konsol.
-
-1. java.io.BufferedReader adalah kelas yang digunakan untuk membaca teks dari aliran masukan (input stream). Kelas ini membungkus aliran masukan lain, seperti java.io.InputStreamReader, sehingga memungkinkan kita membaca input dari pengguna dengan cara yang lebih efisien.
-2. java.io.InputStreamReader adalah kelas yang digunakan untuk membaca karakter dari aliran masukan (input stream) dan mengonversinya menjadi karakter yang dapat dibaca oleh Java. Kelas ini bekerja dengan berbagai jenis aliran masukan, seperti System.in yang merupakan aliran masukan standar (konsol).
-   Dengan mengimpor kedua kelas tersebut, kita dapat menggunakan objek BufferedReader yang dibuat dengan new BufferedReader(new InputStreamReader(System.in)) untuk membaca input dari pengguna melalui konsol. Misalnya, dengan menggunakan readLine() dari objek BufferedReader, kita dapat membaca baris teks yang dimasukkan oleh pengguna.
+Dengan menggunakan blok try-catch-finally, kita dapat menangani pengecualian yang terjadi saat mencoba mengakses elemen array args yang melebihi indeks yang tersedia. Pesan pengecualian akan dicetak, dan pesan "Program execution completed." akan ditampilkan setelah penanganan pengecualian.
