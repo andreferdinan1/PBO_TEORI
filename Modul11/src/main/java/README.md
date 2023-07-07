@@ -1,92 +1,27 @@
-PENJELASAN TENTANG LATIHAN Studentrecord
+Extend dalam bahasa JAVA
 
-public class BukuAlamat {
-Deklarasi kelas BukuAlamat yang merupakan kelas publik.
+Dalam bahasa pemrograman, kata kunci extends digunakan untuk melakukan pewarisan atau ekstensi dari kelas yang sudah ada (superclass) ke kelas baru (subclass). Konsep ini dikenal sebagai inheritance atau pewarisan.
 
+Dengan menggunakan extends, kita dapat membuat hierarki kelas di mana subclass mewarisi atribut dan metode dari superclass-nya. Subclass kemudian dapat menambahkan perilaku atau atribut tambahan, atau mengubah perilaku yang ada dalam superclass.
 
-    private String nama;
-    private String alamat;
-    private String nohp;
-    private String email;
-    private static int studentCount;
-Deklarasi variabel-variabel instance nama, alamat, nohp, dan email yang memiliki tipe data String. Variabel studentCount dideklarasikan sebagai variabel statik yang akan digunakan untuk menghitung jumlah mahasiswa dalam program.
+Manfaat dari penggunaan extends antara lain:
 
+Menghindari duplikasi kode: Ketika beberapa kelas memiliki atribut dan metode yang sama, kita dapat mengumpulkan mereka dalam superclass dan meng-extend superclass tersebut ke kelas-kelas lainnya. Dengan demikian, kita dapat menghindari duplikasi kode yang tidak perlu.
 
-    public BukuAlamat(){
-        studentCount++;
-    }
-Konstruktor tanpa parameter yang akan dieksekusi ketika objek BukuAlamat dibuat. Setiap kali konstruktor ini dipanggil, studentCount akan bertambah satu.
+Reusabilitas kode: Dengan mewarisi atribut dan metode dari superclass, kita dapat memanfaatkan kembali kode yang sudah ada. Ini memungkinkan pengembang untuk memperluas atau memodifikasi perilaku yang ada tanpa perlu menulis ulang implementasi yang sama.
 
+Polimorfisme: Dengan menggunakan inheritance, kita dapat membuat objek dari kelas subclass dan memperlakukannya sebagai objek dari kelas superclass. Ini memungkinkan kita untuk menggunakan polimorfisme, di mana objek dapat memiliki berbagai bentuk dan perilaku sesuai dengan hierarki kelas yang ada.
 
-    public BukuAlamat(String temp){ 
-        this.nama = temp; 
-        studentCount++;
-    } 
-Konstruktor dengan satu parameter temp yang digunakan untuk menginisialisasi variabel nama. Setelah variabel nama diinisialisasi, studentCount akan bertambah satu.
+Penggunaan ABSTRAK CLASS
 
+Dalam bahasa Java, kelas abstrak (abstract class) adalah kelas yang tidak dapat diinstansiasi secara langsung. Tujuannya adalah untuk menyediakan blueprint atau kerangka kerja bagi kelas-kelas turunannya (subkelas) yang akan mengimplementasikan metode-metode abstrak yang dideklarasikan dalam kelas abstrak tersebut. Berikut adalah beberapa penggunaan kelas abstrak dalam bahasa Java:
 
-    public BukuAlamat(String nama, String alamat, String nohp, String email){ 
-        this.nama = nama; 
-        this.alamat = alamat;
-        this.nohp = nohp; 
-        this.email = email;
-        studentCount++;
-    }
-Konstruktor dengan empat parameter nama, alamat, nohp, dan email yang digunakan untuk menginisialisasi semua variabel instance. Setelah variabel-instance diinisialisasi, studentCount akan bertambah satu.
+Mendefinisikan metode abstrak: Kelas abstrak dapat mengandung metode abstrak yang tidak memiliki implementasi. Subkelas yang mewarisi kelas abstrak tersebut wajib mengimplementasikan metode-metode abstrak tersebut. Dengan cara ini, kelas abstrak memberikan kerangka kerja untuk perilaku umum yang diharapkan, sementara detail implementasi dibiarkan pada subkelas.
 
+Menggunakan pewarisan (inheritance): Kelas abstrak memungkinkan adanya hierarki kelas dengan pewarisan. Kelas abstrak dapat menjadi superclass bagi beberapa subkelas yang memiliki perilaku dan atribut yang mirip. Dengan mewarisi kelas abstrak, subkelas dapat memanfaatkan implementasi dan perilaku yang sudah ada dalam superclass.
 
-    public String getNama(){
-        return nama;
-    }
+Mengimplementasikan kontrak: Kelas abstrak dapat digunakan untuk menggambarkan sebuah kontrak atau spesifikasi yang harus dipenuhi oleh subkelasnya. Dengan menggunakan kelas abstrak, kita dapat memastikan bahwa subkelas mengimplementasikan metode-metode yang diperlukan sesuai dengan kontrak yang ditentukan dalam kelas abstrak.
 
-    public void setNama(String nama){
-        this.nama = nama;
-    }
-Metode getNama digunakan untuk mengembalikan nilai variabel nama. Metode setNama digunakan untuk mengubah nilai variabel nama.
+Menghindari duplikasi kode: Dengan menerapkan metode-metode umum dalam kelas abstrak, kita dapat menghindari duplikasi kode di berbagai subkelas yang memiliki perilaku yang serupa. Dengan mengumpulkan implementasi yang sama dalam kelas abstrak, kita dapat memastikan bahwa kode yang sama hanya perlu ditulis sekali.
 
-
-    public String getAlamat(){
-        return alamat;
-    }
-
-    public void setAlamat(String alamat){
-        this.alamat = alamat;
-    }
-Metode getAlamat digunakan untuk mengembalikan nilai variabel alamat. Metode setAlamat digunakan untuk mengubah nilai variabel alamat.
-
-
-    public String getNohp(){
-        return nohp;
-    }
-
-    public void setNohp(String nohp){
-        this.nohp = nohp;
-    }
-Metode getNohp digunakan untuk mengembalikan nilai variabel nohp. Metode setNohp digunakan untuk mengubah nilai variabel nohp.
-
-
-    public String getEmail(){
-        return email;
-    }
-
-    public void setEmail(String email){
-        this.email = email;
-    }
-Metode getEmail digunakan untuk mengembalikan nilai variabel email. Metode setEmail digunakan untuk mengubah nilai variabel email.
-
-    public static int getStudentCount(){
-        return studentCount;
-    }
-Metode statik getStudentCount digunakan untuk mengembalikan nilai variabel studentCount.
-
-    public void print(String temp){ 
-        System.out.println("Nama:" + nama); 
-        System.out.println("Alamat:" + al
-
-PENJEALSAN TENTANG LATIHAN 2 MODUL 10
-
-Kode import java.io.BufferedReader; dan import java.io.InputStreamReader; digunakan untuk mengimpor kelas-kelas yang terdapat dalam pustaka Java yang diperlukan untuk membaca input dari pengguna melalui konsol.
-
-1. java.io.BufferedReader adalah kelas yang digunakan untuk membaca teks dari aliran masukan (input stream). Kelas ini membungkus aliran masukan lain, seperti java.io.InputStreamReader, sehingga memungkinkan kita membaca input dari pengguna dengan cara yang lebih efisien.
-2. java.io.InputStreamReader adalah kelas yang digunakan untuk membaca karakter dari aliran masukan (input stream) dan mengonversinya menjadi karakter yang dapat dibaca oleh Java. Kelas ini bekerja dengan berbagai jenis aliran masukan, seperti System.in yang merupakan aliran masukan standar (konsol).
-   Dengan mengimpor kedua kelas tersebut, kita dapat menggunakan objek BufferedReader yang dibuat dengan new BufferedReader(new InputStreamReader(System.in)) untuk membaca input dari pengguna melalui konsol. Misalnya, dengan menggunakan readLine() dari objek BufferedReader, kita dapat membaca baris teks yang dimasukkan oleh pengguna.
+Penting untuk diingat bahwa kelas abstrak tidak dapat diinstansiasi langsung, sehingga tidak dapat dibuat objek dari kelas abstrak. Namun, kita masih dapat membuat referensi variabel dari tipe kelas abstrak dan menggunakannya untuk merujuk ke objek subkelas yang diinstansiasi.
