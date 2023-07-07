@@ -1,1 +1,1 @@
-Penjelasan terdapat di MODUL masing-masing dengan nama File README.md
+Penjelasan terdapat di masing-masing MODUL dengan nama File README.md
